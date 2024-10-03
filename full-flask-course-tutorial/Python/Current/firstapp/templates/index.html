@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %} Index page {% endblock %}
+
+{% block content %}
+     <h1>Welcome</h1>
+     <form method="POST" action="{{ url_for('index') }}">
+          <input type="text" name="username" placeholder="Unsername">
+          <input type="password" name="password" placeholder="Password">
+          <button type="submit">Login</button>
+     </form>
+
+     <h1>File upload</h1>
+     <form method="POST" action="{{ url_for('file_upload') }}" enctype="multipart/form-data">
+          <input type="file" name="file" required accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel, text/plain">
+          <button type="submit">Upload</button>
+     </form>
+
+     <h1>Convert CSV and Download</h1>
+     <form method="POST" action="{{ url_for('convert_csv') }}" enctype="multipart/form-data">
+          <input type="file" name="file" required accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
+          <button type="submit">Upload</button>
+     </form>
+
+     <h1>Convert CSV</h1>
+     <form method="POST" action="{{ url_for('convert_csv_two') }}" enctype="multipart/form-data">
+          <input type="file" name="file" required accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
+          <button type="submit">Upload</button>
+     </form>
+{% endblock %}
