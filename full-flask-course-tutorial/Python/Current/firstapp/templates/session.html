@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %} Session {% endblock %}
+
+{% block content %}
+     <h1>{{ message }}</h1>
+
+     <a href="{{ url_for('get_data') }}">Get session data</a> <br>
+     <a href="{{ url_for('clear_data') }}">Clear session data</a> <br>
+     <a href="{{ url_for('set_cookie') }}">Set Cookie</a> <br>
+     <a href="{{ url_for('get_cookie') }}">Get Cookie</a> <br>
+     <a href="{{ url_for('remove_cookie') }}">Remove Cookie</a> <br>
+     <a href="{{ url_for('login') }}">Login</a> <br>
+{% endblock %}
